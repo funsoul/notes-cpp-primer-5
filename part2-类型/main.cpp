@@ -15,10 +15,21 @@ void pointer_test()
     cout << *pi * *pi << endl;
 }
 
+void decltype_test()
+{
+    int a = 3, b = 4;
+    decltype(a) c = a;
+    decltype((b)) d = a;
+    ++c;
+    ++d;
+    printf("c: %d, d: %d\n", c, d);
+}
+
 int main()
 {
     // ref_test();
     // pointer_test();
+    decltype_test();
     return 0;
 }
 
