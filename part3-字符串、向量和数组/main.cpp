@@ -63,6 +63,17 @@ void pointer()
     cout << p[-2] << endl;  // 1
 }
 
+void multiplyArr()
+{
+    int a[3][4] = {0};
+
+    for (auto &row: a) {
+        for (auto col: row) {
+            cout << col << endl;
+        }
+    }
+}
+
 int main()
 {
     // init();
@@ -70,6 +81,7 @@ int main()
     // vectorTest();
     // it();
     // itArr();
-    pointer();
+    // pointer();
+    multiplyArr();
     return 0;
 }
