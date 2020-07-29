@@ -32,10 +32,44 @@ void vectorTest()
     cout << "size: " << v.size() << ", capacity: " << v.capacity() << endl;
 }
 
+void it()
+{
+    string s("hello world");
+    if (s.begin() != s.end()) {
+        auto it = s.begin();
+        *it = toupper(*it);
+    }
+    cout << s << endl;
+
+    for (auto it = s.begin(); it != s.end() && !isspace(*it); it++)
+        *it = toupper(*it);
+    cout << s << endl;
+}
+
+void itArr()
+{
+    int a[] = {1,2,3};
+    int *b = begin(a);
+    int *e = end(a);
+    for (;b != e;b++)
+        cout << *b << endl;
+}
+
+void pointer()
+{
+    int a[] = {1,2,3};
+    int *p = &a[2];
+    cout << *p << endl;     // 3
+    cout << p[-2] << endl;  // 1
+}
+
 int main()
 {
     // init();
     // rangeFor();
-    vectorTest();
+    // vectorTest();
+    // it();
+    // itArr();
+    pointer();
     return 0;
 }
