@@ -20,9 +20,17 @@ void operatorTest()
     cout << i << " " << j << " " << ok << " " << ok2 << endl;
 }
 
+void wrapArround()
+{
+    short i = 32767;
+    i += 1;
+    cout << i << endl; // -32768
+}
+
 int main()
 {
     // priority();
-    operatorTest();
+    // operatorTest();
+    wrapArround();
     return 0;
 }
