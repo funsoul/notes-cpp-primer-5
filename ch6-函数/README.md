@@ -261,3 +261,30 @@ void error_print()
 #endif
 }
 ```
+
+## 函数匹配
+
+调用重载函数时应尽量避免强制类型转换。如果在实际应用中确实需要强制类型转换，则说明我们设计的形参集合不合理。
+
+## 函数指针
+
+函数指针指向的是函数而非对象。
+
+```cpp
+// 比较两个字符串的长度
+bool lengthCompare(const string &, const string &);
+
+// 指向该函数的指针
+bool (*p)(const string &, const string &);
+
+// 错误写法：下面表示p是一个返回值为bool指针的函数
+bool *p(const string &, const string &);
+```
+
+### 使用函数指针
+
+```cpp
+// 下面等价，取地址符可选
+p = lengthCompare;
+p = &lengthCompare;
+```
